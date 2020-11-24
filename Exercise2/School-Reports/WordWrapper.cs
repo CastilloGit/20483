@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Configuration;
+using static System.Net.Mime.MediaTypeNames;
 using Microsoft.Office.Interop.Word;
 
-namespace School 
-{ 
+namespace School
+{
     class WordWrapper : IDisposable  
     {
         X509Certificate2 _certificate;
@@ -287,49 +287,66 @@ namespace School
         {
 
             // TODO: Exercise 2: Task 1a: Get the private key from the X509 certificate.
-             throw new NotImplementedException();
-          
+            //throw new NotImplementedException();
 
+            var provider = (RSACryptoServiceProvider)this._certificate.PrivateKey;
             // TODO: Exercise 2: Task 1b: Create an instance of the AesManaged algorithm which the data is encrypted with.
-            
-            // TODO: Exercise 2: Task 1c: Create a stream to process the bytes.
-                
-            // TODO: Exercise 2: Task 1d: Create byte arrays to get the length of the encryption key and IV. 
-                    
+            using (var algorithm = new AesManaged())
+            {
+                // TODO: Exercise 2: Task 1c: Create a stream to process the bytes.
+                using (var inStream = new MemoryStream(bytesToDecrypt))
+                {
+                    // TODO: Exercise 2: Task 1d: Create byte arrays to get the length of the encryption key and IV. 
+                    var keyLength = new byte[4];
+                    var ivLength = new byte[4];
 
-            // TODO: Exercise 2: Task 1e: Read the key and IV lengths starting from index 0 in the in stream.
-                    
+                    // TODO: Exercise 2: Task 1e: Read the key and IV lengths starting from index 0 in the in stream.
+                    inStream.Seek(0, SeekOrigin.Begin);
+                    inStream.Read(keyLength, 0, keyLength.Length);
+                    inStream.Read(ivLength, 0, ivLength.Length);
 
-            // TODO: Exercise 2: Task 1f: Convert the lengths to ints for later use.
-                    
+                    // TODO: Exercise 2: Task 1f: Convert the lengths to ints for later use.
+                    var convertedKeyLength = BitConverter.ToInt32(keyLength, 0);
+                    var convertedIvLength = BitConverter.ToInt32(ivLength, 0);
 
-            // TODO: Exercise 2: Task 1g: Determine the starting position and length of the data.
-                    
+                    // TODO: Exercise 2: Task 1g: Determine the starting position and length of the data.
+                    var dataStartPos = convertedKeyLength + convertedIvLength + keyLength.Length + ivLength.Length;
+                    var dataLength = (int)inStream.Length - dataStartPos;
 
-            // TODO: Exercise 2: Task 1h: Create the byte arrays for the encrypted key, the IV, and the encrypted data.
-                    
+                    // TODO: Exercise 2: Task 1h: Create the byte arrays for the encrypted key, the IV, and the encrypted data.
+                    var encryptionKey = new byte[convertedKeyLength];
+                    var iv = new byte[convertedIvLength];
+                    var encryptedData = new byte[dataLength];
 
-            // TODO: Exercise 2: Task 1i: Read the key, IV, and encrypted data from the in stream.
-                    
+                    // TODO: Exercise 2: Task 1i: Read the key, IV, and encrypted data from the in stream.
 
-            // TODO: Exercise 2: Task 1j: Decrypt the encrypted AesManaged encryption key. 
-                    
+                    // TODO: Exercise 2: Task 1j: Decrypt the encrypted AesManaged encryption key. 
+                    var decryptedKey = provider.Decrypt(encryptionKey, false);
 
-            // TODO: Exercise 2: Task 1k: Create an underlying stream for the decrypted data.
-                    
+                    // TODO: Exercise 2: Task 1k: Create an underlying stream for the decrypted data.
+                    using (var outStream = new MemoryStream())
+                    {
 
-            // TODO: Exercise 2: Task 1l: Create an AES decryptor based on the key and IV.
-                        
+                        // TODO: Exercise 2: Task 1l: Create an AES decryptor based on the key and IV.
+                        using (var decryptor = algorithm.CreateDecryptor(decryptedKey, iv))
+                        {
 
-            // TODO: Exercise 2: Task 1m: Create a CryptoStream that will write the decrypted data to the underlying buffer.
-                            
+                            // TODO: Exercise 2: Task 1m: Create a CryptoStream that will write the decrypted data to the underlying buffer.
+                            using (var decrypt = new CryptoStream(outStream, decryptor, CryptoStreamMode.Write))
+                            {
 
-            // TODO: Exercise 2: Task 1n: Write all the data to the stream.
-                                
+                                // TODO: Exercise 2: Task 1n: Write all the data to the stream.
+                                decrypt.Write(encryptedData, 0, dataLength);
+                                decrypt.FlushFinalBlock();
 
-            // TODO: Exercise 2: Task 1o: Return the decrypted buffered data as a byte[].
-                                
-                            
+                                // TODO: Exercise 2: Task 1o: Return the decrypted buffered data as a byte[].
+                                return outStream.ToArray();
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
         public void Print(string filePath)
