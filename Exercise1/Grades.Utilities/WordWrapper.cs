@@ -241,8 +241,7 @@ namespace Grades.Utilities
                         this._word.Quit();
                     }
                 }
-                try
-                {
+                try{
                     // Release unmanaged resources here
                     if (this._word != null)
                     {
