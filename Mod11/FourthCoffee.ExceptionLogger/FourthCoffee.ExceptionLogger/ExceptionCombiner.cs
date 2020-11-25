@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Word;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows;
 // TODO: 01: Bring the Microsoft.Office.Interop.Word namespace into scope.
 
-
+using Microsoft.Office.Interop.Word;
 
 namespace FourthCoffee.ExceptionLogger
 {
@@ -16,7 +18,7 @@ namespace FourthCoffee.ExceptionLogger
         string _outputFilePath;
         IEnumerable<ExceptionEntry> _exceptions;
         // TODO: 02: Declare a global object to encapsulate Microsoft Word.
-       
+        dynamic _word;
 
         public ExceptionCombiner(string outputFilePath, IEnumerable<ExceptionEntry> exceptions)
         {
@@ -33,7 +35,7 @@ namespace FourthCoffee.ExceptionLogger
                 return;
 
             // TODO: 03: Instantiate the _word object.
-            
+            this._word = new Microsoft.Office.Interop.Word.Application();
 
             this.GenerateWordDocument();
 
@@ -70,7 +72,8 @@ namespace FourthCoffee.ExceptionLogger
         private void CreateDocument()
         {
             // TODO: 04: Create a blank Word document.
-            
+            this._word.Documents.Add().Activate();
+
         }
 
         private void AppendText(string text, bool bold, bool underLine)
