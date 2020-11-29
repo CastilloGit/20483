@@ -36,14 +36,14 @@ namespace FourthCoffee.MetaDataExtractor
             var type = typeof(Encryptor);
 
             // TODO: 01: Invoke the Type.GetCustomAttribute method.
-            
+            var typeAttribute = type.GetCustomAttribute<DeveloperInfo>(false);
 
             results.Items.Add(this.FormatComment(typeAttribute, type.Name, "Type"));
 
             foreach (var member in type.GetMembers())
             {
                 // TODO: 02: Invoke the MemberInfo.GetCustomAttribute method.
-                
+                var memberAttribute = member.GetCustomAttribute<DeveloperInfo>(false);
 
                 results.Items.Add(this.FormatComment(memberAttribute, member.Name, member.MemberType.ToString()));
             }
