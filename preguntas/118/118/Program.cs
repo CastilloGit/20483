@@ -1,4 +1,17 @@
-﻿using System;
+﻿/* 
+    * Pregunta 118
+You need to create a method that can be called by using a varying number of parameters.
+What should you use?
+A. Method overloading
+B. Derived classes
+C. Named parameters
+D. Enumeration
+E. Interface
+F. Lambda expressions
+
+    * A.- Method overloading
+*/
+using System;
 
 namespace _118
 {
