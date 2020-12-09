@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>CSharp Ejercicio - 109</title>
+</head>
+
+<body>
+    <h1 style='text-align: center;'> CSharp Ejercicio Nº 109</h1><br />
+    <table style='width:80%;margin-left:auto;margin-right:auto;'>
+        <tr>
+            <td>
+                You are developing code for an application that retrieves information about Microsoft .NET Framework
+                assemblies.<br /><br />
+
+                The following code segment is part of the application (line numbers are included for reference
+                only):<br /><br />
+                <img src="./img/image185.jpeg" alt=""><br /><br />
+
+
+                You need to insert code at line 04. The code must load the assembly. Once the assembly is loaded, the
+                code must be able to read the assembly metadata, but the code must be denied access from executing code
+                from the assembly.<br /><br />
+
+                Which code segment should you insert at line 04?<br /><br />
+
+                A. Assembly.ReflectionOnlyLoadFrom(bytes);<br />
+                B. Assembly.ReflectionOniyLoad(bytes);<br />
+                C. Assembly.Load(bytes);<br />
+                D. Assembly.LoadFrom(bytes);<br /><br />
+
+                Correct Answer: C<br />
+
+                Section: Volume B<br /><br />
+
+                Explanation<br /><br />
+
+                Explanation/Reference:<br /><br />
+
+
+                <hr><br /><br />
+                <h2 style='color:red'>Explicación</h2><br /><br />
+                La explicación esta dada en la ejecución del programa:<br /><br />
+                ***********************************************<br />
+                 LISTA DE TODAS LAS OPCIONES DEL EJERCICIO<br />
+                ***********************************************<br />
+                <ul style="list-style: none;">
+                    <li>Opción A. Assembly.ReflectionOnlyLoadFrom(bytes);<br /><br />
+                        El assembly es nulo..<br />
+                        Este método toma com parametro una string y no byte[]<br />
+                        El error mostrado es:<br />
+                        Argumento 1: no se puede convertir de 'byte[]' a 'string' [Ejer-CSharp-No-109]csharp(CS1503)</li>
+                        <br /><br />
+                    <li>Opción B. Assembly.ReflectionOnlyLoad(bytes);<br /><br />
+                
+                        El Assembly no es nulo, pero no muestra nada porque no usado correctamente
+                        El error mostrado en esta opción es:</li><br /><br />
+                    <li>Opción C. Assembly.Load(bytes);<br /><br />
+                
+                        El Assembly no es nulo, mostrando sus metadatos:<br />
+                        Los datos del Assambly son: Ejer-CSharp-No-41, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+                    </li><br /><br />
+                    <li>Opción D. Assembly.LoadFrom(bytes);<br /><br />
+                
+                        El assembly es nulo...<br />
+                        Este método toma com parametro una string y no byte[]<br />
+                        El error mostrado es:<br />
+                        Argumento 1: no se puede convertir de 'byte[]' a 'string' [Ejer-CSharp-No-109]csharp(CS1503)
+                    </li><br />
+                </ul>
+                <h2 style='color:red'>Respuesta:</h2>
+                <p>La respuesta correcta es la que es dada la opción C.</p>
+                <p>Es necesario mencionar que primero tenemos que ubicar un archivo .dll o un
+                    ensamblado como se muestra en la siguiente imagen. Es necesario para poder
+                    primero leer en bytes y luego cargarlo con la clase Assembly que extraerá 
+                    posteriormente los metadatos a mostrar.
+                </p>
+                <img src="./img/ejerNo_109-2.jpg" alt=""><br />
+
+                <br />
+                <h3>Mostrando de manera visual la respuesta: </h3>
+                <img src="./img/ejerNo_109-1.jpg" alt=""><br />
+                
+
+                <h2 style='color:red'>Fuentes:</h2><br />
+                https://docs.microsoft.com/es-es/dotnet/api/system.reflection.assembly.reflectiononlyload?view=net-5.0#System_Reflection_Assembly_ReflectionOnlyLoad_System_Byte___
+                <br /><br />
+                https://docs.microsoft.com/es-es/dotnet/api/system.reflection.assembly.reflectiononlyload?view=net-5.0 <br /><br />
+                https://www.csharpcodi.com/csharp-examples/System.Reflection.Assembly.ReflectionOnlyLoad(byte[])/
+
+
+            </td>
+        </tr>
+    </table>
+    <br /><br />
+
+    <script>
+    </script>
+</body>
+
+</html>

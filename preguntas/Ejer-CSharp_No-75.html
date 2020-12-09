@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>CSharp Ejercicio - 75</title>
+</head>
+
+<body>
+    <h1 style='text-align: center;'> CSharp Ejercicio Nº 75</h1><br />
+    <table style='width:80%;margin-left:auto;margin-right:auto;'>
+        <tr>
+            <td>
+                You are developing an application. The application calls a method that returns an array of integers
+                named customerIds.<br /><br />
+
+                You define an integer variable named customerIdToRemove and assign a value to it. You declare an array
+                named filteredCustomerIds.<br /><br />
+
+                You have the following requirements:<br /><br />
+
+                <ul>
+                    <li>
+                        Remove duplicate integers from the customerIds array.<br />
+                    </li>
+                    <li>
+                        Sort the array in order from the highest value to the lowest value.<br />
+                    </li>
+                    <li>
+                        Remove the integer value stored in the customerIdToRemove variable from the customerIds
+                        array.<br />
+                    </li>
+                </ul>
+                <br /><br />
+                You need to create a LINQ query to meet the requirements.<br /><br />
+
+                Which code segment should you use?<br /><br />
+
+                <img src="./img/image122.jpeg" alt="">
+                <br /><br />
+                A. Option A<br />
+                B. Option B<br />
+                C. Option C<br />
+                D. Option D<br /><br /><br />
+
+                Correct Answer: C<br />
+
+                Section: Volume A<br /><br />
+
+                Explanation<br /><br />
+
+                Explanation/Reference:<br /><br />
+
+                <hr>
+                <br /><br />
+                <h2 style='color:red'>Explicación</h2>
+                <p>Creemos que aquí hay una errata. Ya que la respuesta no da la respuesta a los
+                    requirimiento. La Respuesta correcta es la opción A.
+                </p>
+
+
+                *********************************************<br />
+                LISTA DE TODOS LOS CUSTOMER EN EL ARRAY !<br />
+                *********************************************<br />
+                <ul style="list-style: none;">
+                    <li>El Customer Joe Smith tiene un ID: 1<br />
+                        El Customer Jose Hurtado tiene un ID: 2<br />
+                        El Customer Juan García tiene un ID: 2<br />
+                        El Customer Pedro Martinez tiene un ID: 4<br />
+                        El Customer Ana Gomez tiene un ID: 5<br />
+                        El Customer Eva Peralta tiene un ID: 5<br />
+                        El Customer Lucia Oses tiene un ID: 4<br />
+                    </li>
+                </ul>
+                <br /><br />
+                **********************************************<br />
+                LISTA DE TODAS LAS OPCIONES DEL EJERCICIO<br />
+                **********************************************<br />
+                <ul style="list-style: none;">
+                    <li>Opción A. int[] filteredCustomerIds = customerIds.Distinct().OrderByDescending(x =>
+                        x).ToArray();<br /><br /></li>
+                    <li>El Customer con ID: 5 se llama Eva Peralta.<br />
+                        El Customer con ID: 4 se llama Ana Gomez.<br />
+                        El Customer con ID: 2 se llama Juan García.<br />
+                        El Customer con ID: 1 se llama Jose Hurtado.<br />
+                        Esta Opcion cumple todas las condiciones exigidas !!<br /><br /><br />
+                    </li>
+                    <li>Opción B. int[] filteredCustomerIds = customerIds.Where(value => value !=
+                        customerIdToRemove).OrderByDescending(x => x).ToArray();<br /><br /></li>
+                    <li>El Customer con ID: 4 se llama Ana Gomez.<br />
+                        El Customer con ID: 4 se llama Ana Gomez.<br />
+                        El Customer con ID: 2 se llama Juan García.<br />
+                        El Customer con ID: 2 se llama Juan García.<br />
+                        El Customer con ID: 1 se llama Jose Hurtado.<br />
+                        Esta Opcion no cumple la condición de valores distintos en el ID !!<br /><br /><br />
+                    </li>
+                    <li>Opción C. int[] filteredCustomerIds = customerIds.Distinct().Where(value => value !=
+                        customerIdToRemove).OrderByDescending(x => x).ToArray();<br /><br /></li>
+                    <li>El Customer con ID: 4 se llama Ana Gomez.<br />
+                        El Customer con ID: 2 se llama Juan García.<br />
+                        El Customer con ID: 1 se llama Jose Hurtado.<br />
+                        Esta Opcion es la opción correcta dada en la respuesta, pero no muestra el último ID
+                        !!<br /><br /><br />
+                    </li>
+                    <li>Opción D. int[] filteredCustomerIds = customerIds.Where(value => value !=
+                        customerIdToRemove).OrderBy(x => x).ToArray();<br /><br /></li>
+                    <li>El Customer con ID: 1 se llama Jose Hurtado.<br />
+                        El Customer con ID: 2 se llama Juan García.<br />
+                        El Customer con ID: 2 se llama Juan García.<br />
+                        El Customer con ID: 4 se llama Ana Gomez.<br />
+                        El Customer con ID: 4 se llama Ana Gomez.<br />
+                        Esta Opcion no cumple la condición de valores distintos en el ID !!<br /><br /></li>
+                </ul>
+
+                <h2 style='color:red'>Respuesta:</h2>
+                <p>La Respuesta correcta para nosotros es la opción A tal y como se muestra en la siguiente imagen:<br /><br />
+                    <img src="./img/ejerNo_75-1.jpg" alt="">
+                    
+                    <br /><br />
+                    La opción C que es dada como correcta, no lo es ya que no muestra todas las IDs que se tienen
+                    en la respuesta correcta. <br />Ver la suguiente imagen:<br /><br />
+                    <img src="./img/ejerNo_75-2.jpg" alt="">
+                </p>
+                <p></p>
+                <br />
+                <h3>Mostrando de manera visual la respuesta: </h3>
+
+                <h2 style='color:red'>Fuentes:</h2>
+                <br />
+                <br />
+            </td>
+        </tr>
+    </table>
+
+    <script>
+    </script>
+</body>
+
+</html>

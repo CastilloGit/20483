@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>CSharp Ejercicio - 58</title>
+</head>
+
+<body>
+    <h1 style='text-align: center;'> CSharp Ejercicio Nº 58</h1><br />
+    <table style='width:80%;margin-left:auto;margin-right:auto;'>
+        <tr>
+            <td>
+                You are developing a method named CreateCounters that will create performance counters for an
+                application. The method includes the following code. (Line numbers are included for reference
+                only.)<br />
+
+                <br /><img src="./img/image96.jpeg" alt=""><br /><br />
+
+
+                You need to ensure that Counter2 is available for use in Windows Performance Monitor
+                (PerfMon).<br /><br />
+
+                Which code segment should you insert at line 16?<br /><br />
+
+                A. CounterType = PerformanceCounterType.RawBase<br />
+                B. CounterType = PerformanceCounterType.AverageBase<br />
+                C. CounterType = PerformanceCounterType.SampleBase<br />
+                D. CounterType = PerformanceCounterType.CounterMultiBase<br /><br />
+
+                Correct Answer: B<br /><br />
+
+                Section: Volume A<br /><br />
+
+                Explanation<br /><br />
+
+                Explanation/Reference:<br />
+
+                Explanation:<br />
+
+                
+                References:
+                http://msdn.microsoft.com/en-us/library/system.diagnostics.performancecountertype.aspx<br /><br />
+
+                <hr><br /><br />
+                <h2 style='color:red'>Explicación</h2>
+                    La misma dada en la respuesta.
+                <p>
+                PerformanceCounterType.AverageTimer32<br /><br />
+                Un contador promedio que mide el tiempo que tarda, en promedio,
+                para completar un proceso u operación. Los contadores de este tipo muestran una
+                relación del tiempo total transcurrido de la muestra.<br /><br />
+                Intervalo al número de procesos u operaciones completados durante ese tiempo. Este tipo de contador mide
+                el tiempo en tics del reloj del sistema. Fórmula: ((N1 -N0)/F)/(B1B0), donde N1 y N0 son contador de rendimiento
+                lecturas, B1 y B0 son sus valores AverageBase correspondientes, y F es el número de tics por
+                segundo.</p>
+
+                <p>
+                    Por lo tanto, el numerador representa el número de tics contados durante el último intervalo de muestra,
+                    F representa el frecuencia de los ticks, y el denominador representa el número de operaciones completadas durante el
+                    último intervalo de muestra. Los contadores de este tipo incluyen PhysicalDisk\Avg. Segundos de disco/
+                    Transferencia.<br /><br />                    
+                </p>
+
+                <p>
+                    PerformanceCounterType.AverageBase: un contador base que se utiliza en el cálculo del tiempo o recuento
+                    promedios, como AverageTimer32 y AverageCount64. Almacena el denominador para calcular un contador a
+                    presente "tiempo por operación" o "recuento por operación".  
+                </p><br /><br />  
+
+                <h2 style='color:red'>Respuesta:</h2>
+                La misma dada en el ejercicio. La Opción B.
+                <br />
+                <h3>Mostrando de manera visual la respuesta: </h3>
+                <img src="./img/ejerNo_58-1.jpg" alt="">
+                <h2 style='color:red'>Fuentes:</h2>
+                https://docs.microsoft.com/es-es/dotnet/api/system.diagnostics.performancecounter?view=dotnet-plat-ext-5.0
+                <br />
+                https://docs.microsoft.com/es-es/dotnet/api/system.diagnostics.performancecountertype?view=dotnet-plat-ext-5.0<br />
+                https://docs.microsoft.com/es-es/dotnet/api/system.diagnostics.performancecounter.categoryname?view=dotnet-plat-ext-5.0
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
