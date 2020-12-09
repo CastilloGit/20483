@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>CSharp Ejercicio - 41</title>
+</head>
+
+<body>
+    <h1 style='text-align: center;'> CSharp Ejercicio Nº 41</h1><br />
+    <table style='width:80%;margin-left:auto;margin-right:auto;'>
+        <tr>
+            <td>
+                DRAG DROP<br /><br />
+
+                You are implementing a method that creates an instance of a class named User and adds the user to the
+                users list. The User class contains a public event named Renamed. The following code segment defines the
+                Renamed event:<br /><br />
+
+                Public event EventHandler&lt;RenameEventArgs&gt; Renamed;<br /><br />
+
+                You need to create an event handler for the Renamed event by using a lambda expression.<br /><br />
+
+                You have the following code:<br /><br />
+
+                <img src="./img/image64.jpeg" alt=""><br /><br />
+
+                Which code segments should you include in Target 1 and Target 2 to complete the code?<br /><br />
+
+                To answer, drag the appropriate code segments to the correct targets. Each code segment may be used
+                once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view
+                content.<br /><br />
+
+                NOTE: Each correct selection is worth one point.<br /><br />
+
+                Select and Place:<br /><br />
+
+                <img src="./img/image65.jpeg" alt=""><br /><br />
+
+                Correct Answer:<br /><br />
+
+                <img src="./img/image66.jpeg" alt=""><br /><br />
+
+                Section: Volume A<br /><br />
+
+                Explanation<br /><br />
+
+                Explanation/Reference:<br /><br />
+
+                <hr><br /><br />
+                <h2 style='color:red'>Explicación</h2>
+                <p>En este ejercicio es necesario saber como funcionan los delegados y los eventos para poder hacer el ejercicio.</p>
+                <p>En este ejercicio no tenemos opciones por lo que solo tenemos que probar la respuesta dada para ver 
+                    si da la solución querida.
+                </p>
+
+                <p></p>
+                <h2 style='color:red'>Respuesta:</h2>
+                La respuesta dada por el ejercicio, opción:
+                Caja 1:
+                user.Renamed += (sender, e)=>
+                Caja 2:
+                    users.Add(user);
+                <br />
+
+                <h2 style='color:red'>Fuentes:</h2><br /><br />
+                https://www.tutorialsteacher.com/csharp/csharp-event <br />
+                <br />https://docs.microsoft.com/es-es/dotnet/api/system.eventhandler?view=net-5.0
+                <br />https://docs.microsoft.com/es-es/dotnet/csharp/language-reference/keywords/event
+
+            </td>
+        </tr>
+    </table>
+    <br /><br />
+
+    <script>
+    </script>
+</body>
+
+</html>

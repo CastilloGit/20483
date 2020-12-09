@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>CSharp Ejercicio - 92</title>
+</head>
+
+<body>
+    <h1 style='text-align: center;'> CSharp Ejercicio Nº 92</h1><br />
+    <table style='width:80%;margin-left:auto;margin-right:auto;'>
+        <tr>
+            <td>
+                You have an assembly named Assembly1 that is written in C#. Assembly1 has a method named
+                Method1.<br /><br />
+
+                You add a new method named Method2 to Assembly1. Method2 is a newer version of Method1 and must be used
+                by applications in the future.<br /><br />
+
+                You need to ensure that if a developer builds a project that uses Method1, the developer is notified
+                that<br />
+
+                Method1 is deprecated.<br /><br />
+
+                What should you do?<br /><br />
+
+                A. Set an #if DEPRECATED preprocessor directive above Method1. Set a #endif preprocessor directive after
+                Method1.<br />
+
+                B. Set a #pragma warning disable preprocessor inside of Method1.<br />
+                C. Mark Method1 with an ObsoleteAttribute attribute.<br />
+                D. Mark Method1 with a Conditional attribute that is set to WARNING.<br />
+                E. Set a #warning preprocessor directive inside of Method1.<br /><br />
+
+                Correct Answer: C<br /><br />
+
+                Section: Volume A<br /><br />
+
+                Explanation<br /><br />
+
+                Explanation/Reference:<br /><br />
+
+                Explanation:<br /><br />
+
+                ObsoleteAttribute is applicable to all program elements except assemblies, modules, parameters, and
+                return values. Marking an element as obsolete informs users that the element will be removed in future
+                versions of the product.<br /><br />
+
+                Reference:<br />
+
+                https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute?view=netframework-4.7.2<br />
+
+                <br /><br />
+                <hr><br /><br />
+                <h2 style='color:red'>Explicación</h2>
+
+                <p>ObsoleteAttribute es un atributo aplicable a todos los elementos del programa, excepto ensamblados,
+                    módulos, parámetros y retorno. <br />
+                    Tal y como se muestra en la siguiente imagen:</p>
+                    <img src="./img/ejerNo_92-1.jpg" alt=" ">
+
+                <h2 style='color:red'>Respuesta:</h2>
+                <p>La Respuesta correcta es la opción C que es dada en el ejercicio.</p>
+                <p>Cuando se ejecuta el programa nos da un error y un warning que es lo que se muestra a continuación:
+                </p>
+                <p>
+                    Determinando los proyectos que se van a restaurar...<br /><br />
+                    Todos los proyectos están actualizados para la restauración.<br />
+                    C:\20483C\Tareas\EjerExamCSharp\mios\carlos\Ejer-CSharp-No-92\Program.cs(29,31): warning CS06eto:
+                    <br />
+                    'Esta propiedad esta obsoleta. Usa mejor la nueva propiedad.'
+                    [C:\20483C\Tareas\EjerExamer-CSharp-No-92.csproj]<br /><br />
+                    C:\20483C\Tareas\EjerExamCSharp\mios\carlos\Ejer-CSharp-No-92\Program.cs(31,31): error CS0619soleto:
+                    <br />
+                    'Este método está obsoleto. <br /><br />
+                    Ejecutar mejor el LlamarMetodoNuevo instead.' [C:\20483C2\Program.cs(29,31): warning CS0618:
+                    'Program.PropiedadVieja' está obsoleto: 'Esta propiedad
+                    esta obsoleta. <br /><br />
+                    Usa mejor la nueva propiedad.'
+                    [C:\20483C\Tareas\EjerExamCSharp\mios\carlos\Ejer-CSharp-No-92\Ejer-CSharp-No-92.csproj]<br />
+                    C:\20483C\Tareas\EjerExamCSharp\mios\carlos\Ejer-CSharp-No-92\Program.cs(31,31): error CS0619:
+                    <br />
+                    'Program.LlamarMetodoViejo()' está obsoleto: 'Este método está obsoleto. Ejecutar mejor el
+                    LlamarMetodoNuevo instead.'
+                    [C:\20483C\Tareas\EjerExamCSharp\mios\carlos\Ejer-CSharp-No-92\Ejer-CSharp-No-92.csproj]
+                    1 Advertencia(s)
+                    1 Errores
+                </p>
+
+                <h3>Mostrando de manera visual la respuesta: </h3>
+                <img src="./img/ejerNo_92-0.jpg" alt=" ">
+                
+                <h2 style='color:red'>Fuentes:</h2><br /><br />
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
