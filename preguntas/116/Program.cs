@@ -44,12 +44,12 @@ namespace _116
             public string Phone { get; set; }
             public string GetCustomerById(int customerId)
             {
-
+                //...
             }
 
             public string GetCustomerByDate(DateTime dateFrom, DateTime dateTo)
             {
-
+                //...
             }
 
         }
